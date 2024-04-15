@@ -1,5 +1,9 @@
 using UnityEngine;
 
+
+// TODO:
+// remove this script entirely. keep enemy respawning to enemy (no destroy)
+
 public class EnemyPool : MonoBehaviour
 {
     public Enemy enemyPrefab = null;

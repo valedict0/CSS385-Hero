@@ -66,7 +66,7 @@ public class Hero : MonoBehaviour
                 float rotation = ((Mathf.PI * rigidbody.rotation) / 180.0f) + (0.5f * Mathf.PI);
                 Vector2 move = new Vector2(Mathf.Cos(rotation), Mathf.Sin(rotation));
                 Vector2 movePosition = rigidbody.position + (move * moveSpeed * Time.fixedDeltaTime);
-                rigidbody.MovePosition(movePosition);// TODO: smooth towards position?
+                rigidbody.MovePosition(movePosition);
             }
         }
 
@@ -75,6 +75,7 @@ public class Hero : MonoBehaviour
         if (fireEggCooldownTime > 0.0f)
         {
             fireEggCooldownTime -= Time.fixedDeltaTime;
+            fireEggCooldownTime = Mathf.Max(0.0f, fireEggCooldownTime);
         } else if (fireEgg)
         {
             fireEggCooldownTime = fireEggCooldown;
@@ -82,5 +83,6 @@ public class Hero : MonoBehaviour
             egg.transform.position = transform.position;
             egg.transform.rotation = transform.rotation;
         }
+        game.eggCooldown = fireEggCooldownTime;
     }
 }

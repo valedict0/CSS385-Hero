@@ -175,6 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 611d0e6ddb625814b9bf07f254b11384, type: 2}
+  waypointDatabase: {fileID: 11400000, guid: f6d369a6fa58a8340a16fb10b279c64c, type: 2}
+  moveSpeed: 8
+  rotateSpeed: 270
+  health: 5
+  waypointSequential: 1
+  waypointDistanceThreshold: 2
   destroyed:
     m_PersistentCalls:
       m_Calls: []

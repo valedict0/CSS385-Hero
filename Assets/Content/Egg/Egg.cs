@@ -38,6 +38,10 @@ public class Egg : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Waypoint"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()

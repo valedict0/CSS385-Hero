@@ -25,5 +25,8 @@ public class GameGUI : MonoBehaviour
         text.text += "Egg Count: " + game.eggCount + "\n";
         text.text += "Enemy Count: " + game.enemyCount + "\n";
         text.text += "Enemy Destroyed: " + game.enemyDestroyed + "\n";
+        text.text += "Sequential Mode: " + game.sequentialMode + "\n";
+        text.text += "Waypoints Hidden: " + game.hideMode + "\n";
+        text.text += "Egg Cooldown: " + game.eggCooldown + "\n";
     }
 }

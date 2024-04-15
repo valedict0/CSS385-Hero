@@ -5,6 +5,11 @@ public class Game : ScriptableObject
 {
     public string heroStatus { get; set; }
     public int eggCount { get; private set; } = 0;
+    public float eggCooldown = 0.0f;
+    public bool hideMode { get; set; } = false;
+    public bool pauseMode { get; set; } = false;
+    public bool sequentialMode { get; set; } = false;
+
     public void IncrementEggCount()
     {
         ++eggCount;
@@ -32,7 +37,6 @@ public class Game : ScriptableObject
     {
         ++enemyDestroyed;
     }
-    public bool paused { get; set; } = false;
 
     private void OnEnable()
     {
@@ -41,6 +45,8 @@ public class Game : ScriptableObject
         enemyCount = 0;
         enemyTouched = 0;
         enemyDestroyed = 0;
-        paused = false;
+        hideMode = false;
+        pauseMode = false;
+        sequentialMode = false;
     }
 }
