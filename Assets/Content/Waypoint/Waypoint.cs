@@ -5,6 +5,7 @@ public class Waypoint : MonoBehaviour
     public Game game = null;
     public WaypointDatabase database;
 
+    public int index = 0;
     public int health = 4;
     private int _health = 4;
     public float respawnOffset = 2.0f;
@@ -24,15 +25,15 @@ public class Waypoint : MonoBehaviour
 
     private void Start()
     {
-        database.waypoints.Add(this);
         spriteRenderer = GetComponent<SpriteRenderer>();
+        database.waypoints[index] = this;
         _positionStart = transform.position;
         _health = health;
     }
 
     private void OnDestroy()
     {
-        database.waypoints.Remove(this);
+        database.waypoints[index] = null;
     }
 
     private void FixedUpdate()

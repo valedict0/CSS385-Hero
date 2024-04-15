@@ -6,9 +6,9 @@ using UnityEngine;
 public class WaypointDatabase : ScriptableObject
 {
     [NonSerialized]
-    public List<Waypoint> waypoints = new List<Waypoint>();
+    public Waypoint[] waypoints = new Waypoint[6];
     private void OnEnable()
     {
-        waypoints.Clear();
+        waypoints = new Waypoint[6];
     }
 }

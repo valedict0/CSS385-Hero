@@ -76,12 +76,20 @@ public class Enemy : MonoBehaviour
     {
         if (!game.sequentialMode || _waypointTarget == null)
         {
-            int randomWaypoint = Random.Range(0, waypointDatabase.waypoints.Count);
+            int randomWaypoint = Random.Range(0, waypointDatabase.waypoints.Length);
             _waypointTarget = waypointDatabase.waypoints[randomWaypoint];
         } else
         {
-            int waypointIndex = waypointDatabase.waypoints.IndexOf(_waypointTarget) - 1;
-            int waypointIndexCount = waypointDatabase.waypoints.Count;
+            int waypointIndex = 0;
+            for (; waypointIndex < waypointDatabase.waypoints.Length; ++waypointIndex)
+            {
+                if (waypointDatabase.waypoints[waypointIndex] == _waypointTarget)
+                {
+                    break;
+                }
+            }
+            waypointIndex += 1;
+            int waypointIndexCount = waypointDatabase.waypoints.Length;
             waypointIndex = (Mathf.Abs(waypointIndex * waypointIndexCount) + waypointIndex) % waypointIndexCount;
             _waypointTarget = waypointDatabase.waypoints[waypointIndex];
         }
