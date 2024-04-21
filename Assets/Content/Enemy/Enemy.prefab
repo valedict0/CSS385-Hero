@@ -176,11 +176,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 611d0e6ddb625814b9bf07f254b11384, type: 2}
   waypointDatabase: {fileID: 11400000, guid: f6d369a6fa58a8340a16fb10b279c64c, type: 2}
+  planeTexture: {fileID: 7028578073694648011, guid: 8643bd5dffdfc3d4f9ae6c6b1032c4a8, type: 3}
+  eggTexture: {fileID: 4646649027328027380, guid: 031c75bb150fce64f9fd5ec21074885f, type: 3}
   moveSpeed: 8
   rotateSpeed: 270
-  health: 5
-  waypointSequential: 1
+  health: 3
   waypointDistanceThreshold: 2
   destroyed:
     m_PersistentCalls:
       m_Calls: []
+  stunnedRotationSpeed: 120
+  heroTrackTimeStartup: 2
+  heroTrackRotationSpeed: 4800
+  heroTrackRadius: 10

@@ -148,5 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 611d0e6ddb625814b9bf07f254b11384, type: 2}
   database: {fileID: 11400000, guid: f6d369a6fa58a8340a16fb10b279c64c, type: 2}
+  index: 0
   health: 4
   respawnOffset: 4
+  shakeStrength: 0.125
+  shakeTime: 1

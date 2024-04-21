@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Game")]
@@ -9,6 +10,8 @@ public class Game : ScriptableObject
     public bool hideMode { get; set; } = false;
     public bool pauseMode { get; set; } = false;
     public bool sequentialMode { get; set; } = false;
+
+    public event Action<Transform> WaypointHit = delegate { };
 
     public void IncrementEggCount()
     {
@@ -36,6 +39,11 @@ public class Game : ScriptableObject
     public void IncrementEnemyDestroyed()
     {
         ++enemyDestroyed;
+    }
+
+    public void InvokeWaypointHit(Transform waypoint)
+    {
+        WaypointHit.Invoke(waypoint);
     }
 
     private void OnEnable()

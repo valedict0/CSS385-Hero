@@ -54,6 +54,7 @@ public class Hero : MonoBehaviour
         if (inputMode == InputMode.Mouse)
         {
             game.heroStatus = "Mouse";
+            //Camera.main.ViewportToWorldPoint(Input.)
             Vector3 move_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             move_position.z = 0.0f;
             rigidbody.MovePosition(move_position);
